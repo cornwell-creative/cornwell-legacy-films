@@ -1,0 +1,1151 @@
+<style>
+  .mlts-page {
+    --mlts-black: #0c0b09;
+    --mlts-deep: #14110d;
+    --mlts-panel: #1b1712;
+    --mlts-gold: #b58a4d;
+    --mlts-gold-light: #d4b47b;
+    --mlts-cream: #f3ede2;
+    --mlts-muted: #c8c0b3;
+    --mlts-line: rgba(212, 180, 123, 0.22);
+    --mlts-white: #ffffff;
+
+    margin: 0;
+    overflow: hidden;
+    background: var(--mlts-black);
+    color: var(--mlts-cream);
+    font-family: inherit;
+  }
+
+  .mlts-page *,
+  .mlts-page *::before,
+  .mlts-page *::after {
+    box-sizing: border-box;
+  }
+
+  .mlts-page h1,
+  .mlts-page h2,
+  .mlts-page h3,
+  .mlts-page p,
+  .mlts-page blockquote {
+    margin-top: 0;
+  }
+
+  .mlts-page a {
+    color: inherit;
+  }
+
+  .mlts-container {
+    width: min(1160px, calc(100% - 48px));
+    margin: 0 auto;
+  }
+
+  .mlts-eyebrow {
+    display: block;
+    margin-bottom: 18px;
+    color: var(--mlts-gold-light);
+    font-size: 0.74rem;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  .mlts-heading {
+    margin-bottom: 24px;
+    color: var(--mlts-cream);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.15rem, 5vw, 4.2rem);
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+  }
+
+  .mlts-heading em {
+    color: var(--mlts-gold-light);
+    font-weight: 400;
+  }
+
+  .mlts-copy {
+    color: var(--mlts-muted);
+    font-size: clamp(1rem, 1.8vw, 1.13rem);
+    line-height: 1.82;
+  }
+
+  .mlts-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 54px;
+    padding: 15px 25px;
+    border: 1px solid var(--mlts-gold);
+    background: var(--mlts-gold);
+    color: var(--mlts-black) !important;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition:
+      background 0.25s ease,
+      color 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .mlts-button:hover {
+    transform: translateY(-2px);
+    background: var(--mlts-gold-light);
+  }
+
+  .mlts-button--outline {
+    background: transparent;
+    color: var(--mlts-cream) !important;
+  }
+
+  .mlts-button--outline:hover {
+    background: var(--mlts-gold);
+    color: var(--mlts-black) !important;
+  }
+
+  /* HERO */
+
+  .mlts-hero {
+    position: relative;
+    min-height: 830px;
+    display: flex;
+    align-items: flex-end;
+    isolation: isolate;
+    background-color: var(--mlts-black);
+  }
+
+  .mlts-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -3;
+    background-image:
+      url("https://images.squarespace-cdn.com/content/6a679986064bf41c2fb56985/e1569c61-ed9c-4e56-a674-85bdc806079b/voice.png?content-type=image%2Fpng");
+    background-position: center 35%;
+    background-size: cover;
+  }
+
+  .mlts-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(7, 6, 5, 0.94) 0%,
+        rgba(7, 6, 5, 0.78) 37%,
+        rgba(7, 6, 5, 0.2) 70%,
+        rgba(7, 6, 5, 0.12) 100%
+      ),
+      linear-gradient(
+        0deg,
+        var(--mlts-black) 0%,
+        rgba(12, 11, 9, 0.72) 18%,
+        transparent 50%
+      );
+  }
+
+  .mlts-hero__content {
+    width: 100%;
+    padding: 150px 0 95px;
+  }
+
+  .mlts-hero__text {
+    max-width: 690px;
+  }
+
+  .mlts-hero__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 30px;
+    color: var(--mlts-gold-light);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.19em;
+    text-transform: uppercase;
+  }
+
+  .mlts-hero__brand::before {
+    content: "";
+    width: 48px;
+    height: 1px;
+    background: var(--mlts-gold);
+  }
+
+  .mlts-hero h1 {
+    max-width: 700px;
+    margin-bottom: 26px;
+    color: var(--mlts-white);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3rem, 7vw, 6.7rem);
+    font-weight: 400;
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+  }
+
+  .mlts-hero h1 em {
+    display: block;
+    color: var(--mlts-gold-light);
+    font-weight: 400;
+  }
+
+  .mlts-hero__lead {
+    max-width: 630px;
+    margin-bottom: 35px;
+    color: #ddd6ca;
+    font-size: clamp(1.07rem, 2vw, 1.3rem);
+    line-height: 1.75;
+  }
+
+  .mlts-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+  }
+
+  .mlts-hero__footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px 30px;
+    margin-top: 55px;
+    padding-top: 24px;
+    border-top: 1px solid var(--mlts-line);
+    color: #aaa195;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* INTRODUCTION */
+
+  .mlts-intro {
+    padding: 115px 0;
+    background:
+      radial-gradient(
+        circle at top right,
+        rgba(181, 138, 77, 0.11),
+        transparent 40%
+      ),
+      var(--mlts-black);
+  }
+
+  .mlts-intro__grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: clamp(55px, 9vw, 120px);
+    align-items: start;
+  }
+
+  .mlts-intro__statement {
+    margin: 0;
+    padding-left: 30px;
+    border-left: 2px solid var(--mlts-gold);
+    color: var(--mlts-cream);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.55rem, 3vw, 2.45rem);
+    line-height: 1.48;
+  }
+
+  .mlts-intro__copy p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* STORY CARDS */
+
+  .mlts-stories {
+    padding: 110px 0;
+    background: var(--mlts-deep);
+    border-top: 1px solid var(--mlts-line);
+    border-bottom: 1px solid var(--mlts-line);
+  }
+
+  .mlts-section-head {
+    max-width: 760px;
+    margin-bottom: 55px;
+  }
+
+  .mlts-stories__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .mlts-story-card {
+    position: relative;
+    min-height: 310px;
+    padding: 34px;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid var(--mlts-line);
+  }
+
+  .mlts-story-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 34px;
+    width: 45px;
+    height: 3px;
+    background: var(--mlts-gold);
+  }
+
+  .mlts-story-card__number {
+    margin-bottom: 55px;
+    color: var(--mlts-gold-light);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.84rem;
+    font-style: italic;
+  }
+
+  .mlts-story-card h3 {
+    margin-bottom: 15px;
+    color: var(--mlts-cream);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.55rem;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+
+  .mlts-story-card p {
+    margin-bottom: 0;
+    color: var(--mlts-muted);
+    font-size: 0.95rem;
+    line-height: 1.72;
+  }
+
+  /* EMOTIONAL STATEMENT */
+
+  .mlts-voice {
+    padding: 125px 0;
+    background: var(--mlts-black);
+    text-align: center;
+  }
+
+  .mlts-voice__inner {
+    max-width: 970px;
+    margin: 0 auto;
+  }
+
+  .mlts-voice blockquote {
+    margin-bottom: 30px;
+    color: var(--mlts-cream);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2rem, 5vw, 4.4rem);
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+  }
+
+  .mlts-voice blockquote em {
+    color: var(--mlts-gold-light);
+    font-weight: 400;
+  }
+
+  .mlts-voice p {
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--mlts-muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  /* IMAGE FEATURE */
+
+  .mlts-family {
+    position: relative;
+    min-height: 760px;
+    display: flex;
+    align-items: flex-end;
+    isolation: isolate;
+    background: var(--mlts-black);
+  }
+
+  .mlts-family::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background-image:
+      url("https://images.squarespace-cdn.com/content/6a679986064bf41c2fb56985/05af0f80-83de-445f-903e-52e8208e7f90/ChatGPT+Image+Jul+27%2C+2026%2C+02_56_46+PM.png?content-type=image%2Fpng");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .mlts-family::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(9, 8, 6, 0.95) 0%,
+        rgba(9, 8, 6, 0.72) 40%,
+        rgba(9, 8, 6, 0.12) 75%
+      ),
+      linear-gradient(
+        0deg,
+        var(--mlts-black) 0%,
+        rgba(12, 11, 9, 0.3) 42%,
+        rgba(12, 11, 9, 0.1) 100%
+      );
+  }
+
+  .mlts-family__content {
+    max-width: 570px;
+    padding: 100px 0;
+  }
+
+  .mlts-family__content .mlts-heading {
+    font-size: clamp(2.3rem, 5vw, 4.5rem);
+  }
+
+  .mlts-family__content p {
+    color: #ddd5c8;
+  }
+
+  /* WHAT THE FILM CAN HOLD */
+
+  .mlts-details {
+    padding: 115px 0;
+    background:
+      radial-gradient(
+        circle at bottom left,
+        rgba(181, 138, 77, 0.08),
+        transparent 35%
+      ),
+      var(--mlts-black);
+  }
+
+  .mlts-details__grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: clamp(55px, 9vw, 115px);
+    align-items: start;
+  }
+
+  .mlts-details__list {
+    border-top: 1px solid var(--mlts-line);
+  }
+
+  .mlts-detail {
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    gap: 18px;
+    padding: 25px 0;
+    border-bottom: 1px solid var(--mlts-line);
+  }
+
+  .mlts-detail__mark {
+    color: var(--mlts-gold-light);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.82rem;
+    font-style: italic;
+  }
+
+  .mlts-detail h3 {
+    margin-bottom: 6px;
+    color: var(--mlts-cream);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+  }
+
+  .mlts-detail p {
+    margin-bottom: 0;
+    color: var(--mlts-muted);
+    font-size: 0.94rem;
+    line-height: 1.65;
+  }
+
+  /* PROCESS */
+
+  .mlts-process {
+    padding: 115px 0;
+    background: var(--mlts-deep);
+    border-top: 1px solid var(--mlts-line);
+    border-bottom: 1px solid var(--mlts-line);
+  }
+
+  .mlts-process__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin-top: 60px;
+    border-top: 1px solid var(--mlts-line);
+    border-left: 1px solid var(--mlts-line);
+  }
+
+  .mlts-step {
+    min-height: 310px;
+    padding: 34px 28px;
+    border-right: 1px solid var(--mlts-line);
+    border-bottom: 1px solid var(--mlts-line);
+  }
+
+  .mlts-step__number {
+    display: block;
+    margin-bottom: 55px;
+    color: var(--mlts-gold-light);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.85rem;
+    font-style: italic;
+  }
+
+  .mlts-step h3 {
+    margin-bottom: 14px;
+    color: var(--mlts-cream);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.42rem;
+    font-weight: 400;
+  }
+
+  .mlts-step p {
+    margin-bottom: 0;
+    color: var(--mlts-muted);
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  /* WHO THIS IS FOR */
+
+  .mlts-who {
+    padding: 115px 0;
+    background: var(--mlts-black);
+  }
+
+  .mlts-who__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(55px, 9vw, 120px);
+    align-items: center;
+  }
+
+  .mlts-who__items {
+    display: grid;
+    gap: 13px;
+  }
+
+  .mlts-who__item {
+    padding: 21px 23px;
+    color: var(--mlts-cream);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.1rem;
+    line-height: 1.45;
+    background: rgba(255, 255, 255, 0.025);
+    border-left: 2px solid var(--mlts-gold);
+  }
+
+  /* CLOSING CTA */
+
+  .mlts-closing {
+    position: relative;
+    padding: 130px 0;
+    overflow: hidden;
+    background:
+      radial-gradient(
+        circle at center,
+        rgba(181, 138, 77, 0.16),
+        transparent 55%
+      ),
+      var(--mlts-deep);
+    text-align: center;
+    border-top: 1px solid var(--mlts-line);
+  }
+
+  .mlts-closing__inner {
+    max-width: 850px;
+    margin: 0 auto;
+  }
+
+  .mlts-closing .mlts-heading {
+    font-size: clamp(2.5rem, 6vw, 5.2rem);
+  }
+
+  .mlts-closing .mlts-copy {
+    max-width: 680px;
+    margin: 0 auto 35px;
+  }
+
+  .mlts-closing__signature {
+    margin-top: 45px;
+    color: #91887b;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  /* RESPONSIVE */
+
+  @media (max-width: 900px) {
+    .mlts-stories__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .mlts-story-card {
+      min-height: auto;
+    }
+
+    .mlts-story-card__number {
+      margin-bottom: 35px;
+    }
+
+    .mlts-process__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 760px) {
+    .mlts-container {
+      width: min(100% - 36px, 1160px);
+    }
+
+    .mlts-hero {
+      min-height: 780px;
+    }
+
+    .mlts-hero::before {
+      background-position: 61% center;
+    }
+
+    .mlts-hero::after {
+      background:
+        linear-gradient(
+          90deg,
+          rgba(7, 6, 5, 0.9) 0%,
+          rgba(7, 6, 5, 0.58) 100%
+        ),
+        linear-gradient(
+          0deg,
+          var(--mlts-black) 0%,
+          rgba(7, 6, 5, 0.76) 40%,
+          rgba(7, 6, 5, 0.15) 100%
+        );
+    }
+
+    .mlts-hero__content {
+      padding: 130px 0 70px;
+    }
+
+    .mlts-hero h1 {
+      font-size: clamp(3rem, 15vw, 4.7rem);
+    }
+
+    .mlts-hero__actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .mlts-button {
+      width: 100%;
+    }
+
+    .mlts-intro,
+    .mlts-stories,
+    .mlts-voice,
+    .mlts-details,
+    .mlts-process,
+    .mlts-who,
+    .mlts-closing {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+
+    .mlts-intro__grid,
+    .mlts-details__grid,
+    .mlts-who__grid {
+      grid-template-columns: 1fr;
+      gap: 45px;
+    }
+
+    .mlts-family {
+      min-height: 720px;
+    }
+
+    .mlts-family::before {
+      background-position: 44% center;
+    }
+
+    .mlts-family::after {
+      background:
+        linear-gradient(
+          0deg,
+          var(--mlts-black) 0%,
+          rgba(9, 8, 6, 0.82) 48%,
+          rgba(9, 8, 6, 0.2) 100%
+        );
+    }
+
+    .mlts-family__content {
+      padding: 70px 0;
+    }
+
+    .mlts-process__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .mlts-step {
+      min-height: auto;
+    }
+
+    .mlts-step__number {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mlts-button {
+      transition: none;
+    }
+
+    .mlts-button:hover {
+      transform: none;
+    }
+  }
+</style>
+
+<main class="mlts-page">
+
+  <!-- HERO -->
+
+  <section class="mlts-hero" aria-labelledby="mlts-title">
+    <div class="mlts-container mlts-hero__content">
+      <div class="mlts-hero__text">
+
+        <div class="mlts-hero__brand">
+          A Cornwell Legacy Films Experience
+        </div>
+
+        <h1 id="mlts-title">
+          My Life
+          <em>to Share.</em>
+        </h1>
+
+        <p class="mlts-hero__lead">
+          A personal documentary film preserving your memories, experiences,
+          and reflections—in the voice of the person who lived them.
+        </p>
+
+        <div class="mlts-hero__actions">
+          <a class="mlts-button" href="/contact">
+            Begin the Conversation
+          </a>
+
+          <a class="mlts-button mlts-button--outline" href="#mlts-story">
+            Discover the Experience
+          </a>
+        </div>
+
+        <div class="mlts-hero__footer">
+          <span>Personal Stories</span>
+          <span>Documentary Interviews</span>
+          <span>Family Archives</span>
+          <span>Lasting Legacy</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRODUCTION -->
+
+  <section class="mlts-intro" id="mlts-story">
+    <div class="mlts-container mlts-intro__grid">
+
+      <div>
+        <span class="mlts-eyebrow">
+          Your Story Matters
+        </span>
+
+        <blockquote class="mlts-intro__statement">
+          A life is more than a collection of dates. It is a voice, a
+          perspective, and a thousand stories only one person can tell.
+        </blockquote>
+      </div>
+
+      <div class="mlts-intro__copy">
+        <h2 class="mlts-heading">
+          Some stories should be heard
+          <em>in your own words.</em>
+        </h2>
+
+        <div class="mlts-copy">
+          <p>
+            My Life to Share is a personalized documentary experience created
+            for individuals who want to preserve their story for the people
+            they love.
+          </p>
+
+          <p>
+            Through a relaxed, thoughtfully guided conversation, we explore
+            the memories, people, places, decisions, challenges, and moments
+            that shaped your life. Photographs, home movies, letters, and other
+            personal materials can then be woven together with your interview
+            to create a film that feels unmistakably yours.
+          </p>
+
+          <p>
+            This is not about presenting a perfect life. It is about preserving
+            a real one—told with honesty, warmth, and the perspective only time
+            can provide.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TYPES OF STORIES -->
+
+  <section class="mlts-stories">
+    <div class="mlts-container">
+
+      <header class="mlts-section-head">
+        <span class="mlts-eyebrow">
+          What We Preserve
+        </span>
+
+        <h2 class="mlts-heading">
+          Every life holds more than
+          <em>one kind of story.</em>
+        </h2>
+
+        <p class="mlts-copy">
+          The film follows the memories that matter most to you. There is no
+          rigid script and no expectation that every life fits the same
+          structure.
+        </p>
+      </header>
+
+      <div class="mlts-stories__grid">
+
+        <article class="mlts-story-card">
+          <div class="mlts-story-card__number">01</div>
+
+          <h3>Where You Came From</h3>
+
+          <p>
+            Childhood, family, hometowns, traditions, early influences, and
+            the places that formed your first understanding of the world.
+          </p>
+        </article>
+
+        <article class="mlts-story-card">
+          <div class="mlts-story-card__number">02</div>
+
+          <h3>The Life You Built</h3>
+
+          <p>
+            Relationships, work, parenthood, achievements, unexpected turns,
+            difficult seasons, and the choices that changed your direction.
+          </p>
+        </article>
+
+        <article class="mlts-story-card">
+          <div class="mlts-story-card__number">03</div>
+
+          <h3>What You Want to Leave</h3>
+
+          <p>
+            Lessons learned, values carried forward, family wisdom, personal
+            reflections, and the things you hope future generations remember.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EMOTIONAL STATEMENT -->
+
+  <section class="mlts-voice">
+    <div class="mlts-container mlts-voice__inner">
+
+      <span class="mlts-eyebrow">
+        The Irreplaceable Part
+      </span>
+
+      <blockquote>
+        Photographs preserve how someone looked.
+        <em>A film preserves who they were.</em>
+      </blockquote>
+
+      <p>
+        The expressions, laughter, pauses, mannerisms, and familiar sound of a
+        voice are often the details families miss most—and the details no
+        written record can fully preserve.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- FAMILY IMAGE -->
+
+  <section class="mlts-family">
+    <div class="mlts-container">
+
+      <div class="mlts-family__content">
+        <span class="mlts-eyebrow">
+          A Gift Across Generations
+        </span>
+
+        <h2 class="mlts-heading">
+          Created today.
+          <em>Kept for decades.</em>
+        </h2>
+
+        <p class="mlts-copy">
+          Your film becomes part of the family record—something children,
+          grandchildren, and generations not yet born can return to when they
+          want to understand the person behind the photographs and names.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHAT CAN BE INCLUDED -->
+
+  <section class="mlts-details">
+    <div class="mlts-container mlts-details__grid">
+
+      <div>
+        <span class="mlts-eyebrow">
+          More Than an Interview
+        </span>
+
+        <h2 class="mlts-heading">
+          The pieces of a life,
+          <em>carefully brought together.</em>
+        </h2>
+
+        <p class="mlts-copy">
+          Every film is shaped around the story and the personal materials
+          available. These pieces help transform a conversation into a fuller
+          documentary portrait.
+        </p>
+      </div>
+
+      <div class="mlts-details__list">
+
+        <article class="mlts-detail">
+          <div class="mlts-detail__mark">I</div>
+
+          <div>
+            <h3>Guided Documentary Conversation</h3>
+            <p>
+              A relaxed interview designed to draw out natural memories rather
+              than rehearsed answers.
+            </p>
+          </div>
+        </article>
+
+        <article class="mlts-detail">
+          <div class="mlts-detail__mark">II</div>
+
+          <div>
+            <h3>Family Photographs</h3>
+            <p>
+              Portraits, snapshots, albums, and images connected to important
+              people, places, and chapters.
+            </p>
+          </div>
+        </article>
+
+        <article class="mlts-detail">
+          <div class="mlts-detail__mark">III</div>
+
+          <div>
+            <h3>Home Movies &amp; Recordings</h3>
+            <p>
+              Existing film, video, or audio that helps bring earlier moments
+              and familiar voices back into the story.
+            </p>
+          </div>
+        </article>
+
+        <article class="mlts-detail">
+          <div class="mlts-detail__mark">IV</div>
+
+          <div>
+            <h3>Letters, Documents &amp; Keepsakes</h3>
+            <p>
+              Personal items that reveal the details, relationships, and
+              history behind the memories.
+            </p>
+          </div>
+        </article>
+
+        <article class="mlts-detail">
+          <div class="mlts-detail__mark">V</div>
+
+          <div>
+            <h3>Meaningful Places</h3>
+            <p>
+              Cinematic footage of homes, landscapes, workplaces, churches, or
+              other places that remain part of your story.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+
+  <section class="mlts-process">
+    <div class="mlts-container">
+
+      <header class="mlts-section-head">
+        <span class="mlts-eyebrow">
+          The Experience
+        </span>
+
+        <h2 class="mlts-heading">
+          Thoughtful from the
+          <em>first conversation.</em>
+        </h2>
+
+        <p class="mlts-copy">
+          You do not need to prepare a speech or organize your entire life
+          before contacting us. The process begins simply, and the story takes
+          shape one step at a time.
+        </p>
+      </header>
+
+      <div class="mlts-process__grid">
+
+        <article class="mlts-step">
+          <span class="mlts-step__number">01</span>
+
+          <h3>Discovery</h3>
+
+          <p>
+            We begin with an informal conversation about your life, the people
+            you hope to reach, and the memories you most want to preserve.
+          </p>
+        </article>
+
+        <article class="mlts-step">
+          <span class="mlts-step__number">02</span>
+
+          <h3>Story Planning</h3>
+
+          <p>
+            Together, we identify meaningful chapters, photographs, documents,
+            locations, and personal materials that can support the film.
+          </p>
+        </article>
+
+        <article class="mlts-step">
+          <span class="mlts-step__number">03</span>
+
+          <h3>Filming</h3>
+
+          <p>
+            Your interview is recorded in a comfortable setting with gentle
+            guidance that allows the conversation and memories to unfold
+            naturally.
+          </p>
+        </article>
+
+        <article class="mlts-step">
+          <span class="mlts-step__number">04</span>
+
+          <h3>Preservation</h3>
+
+          <p>
+            Your voice, photographs, archival materials, and original imagery
+            are carefully shaped into a finished documentary film.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO THIS IS FOR -->
+
+  <section class="mlts-who">
+    <div class="mlts-container mlts-who__grid">
+
+      <div>
+        <span class="mlts-eyebrow">
+          Who Is It For?
+        </span>
+
+        <h2 class="mlts-heading">
+          You do not need to be famous to have a life
+          <em>worth preserving.</em>
+        </h2>
+
+        <p class="mlts-copy">
+          My Life to Share is for people who understand that an ordinary life
+          can hold extraordinary meaning for the family and friends who know
+          it best.
+        </p>
+      </div>
+
+      <div class="mlts-who__items">
+        <div class="mlts-who__item">
+          Parents and grandparents preserving their memories
+        </div>
+
+        <div class="mlts-who__item">
+          Families honoring someone whose story matters
+        </div>
+
+        <div class="mlts-who__item">
+          Individuals reflecting on a meaningful life chapter
+        </div>
+
+        <div class="mlts-who__item">
+          Veterans, community members, and keepers of local history
+        </div>
+
+        <div class="mlts-who__item">
+          Anyone who wants future generations to know more than the dates
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+
+  <section class="mlts-closing">
+    <div class="mlts-container mlts-closing__inner">
+
+      <span class="mlts-eyebrow">
+        Begin Your Story
+      </span>
+
+      <h2 class="mlts-heading">
+        Your family should not have to imagine
+        <em>how you told the story.</em>
+      </h2>
+
+      <p class="mlts-copy">
+        Tell me a little about the life, memories, or personal story you hope
+        to preserve. You do not need to have the entire film figured out. We
+        can begin with a conversation.
+      </p>
+
+      <a class="mlts-button" href="/contact">
+        Start a Conversation
+      </a>
+
+      <div class="mlts-closing__signature">
+        My Life to Share · A Cornwell Legacy Films Experience
+      </div>
+
+    </div>
+  </section>
+
+</main>
