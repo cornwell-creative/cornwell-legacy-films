@@ -1,0 +1,308 @@
+<style>
+  .cc-about {
+    --cc-black: #10110f;
+    --cc-cream: #f4f0e7;
+    --cc-tan: #d8c9ae;
+    --cc-bronze: #a57945;
+    --cc-white: #ffffff;
+
+    background:
+      linear-gradient(rgba(16, 17, 15, 0.95), rgba(16, 17, 15, 0.97)),
+      radial-gradient(
+        circle at top right,
+        rgba(165, 121, 69, 0.2),
+        transparent 42%
+      );
+    color: var(--cc-cream);
+    padding: 90px 24px;
+    font-family: inherit;
+  }
+
+  .cc-about *,
+  .cc-about *::before,
+  .cc-about *::after {
+    box-sizing: border-box;
+  }
+
+  .cc-about__inner {
+    width: min(1180px, 100%);
+    margin: 0 auto;
+  }
+
+  .cc-about__intro {
+    max-width: 880px;
+    margin: 0 auto 65px;
+    text-align: center;
+  }
+
+  .cc-about__eyebrow {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: var(--cc-bronze);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  .cc-about h2 {
+    margin: 0 0 24px;
+    color: var(--cc-white);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.5rem, 6vw, 4.8rem);
+    font-weight: 400;
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+  }
+
+  .cc-about__lead {
+    max-width: 780px;
+    margin: 0 auto;
+    color: #d6d2c9;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    line-height: 1.8;
+  }
+
+  .cc-about__statement {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 35px auto 0;
+    color: var(--cc-tan);
+    font-size: 0.83rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    line-height: 1.7;
+    text-transform: uppercase;
+  }
+
+  .cc-about__statement span {
+    color: var(--cc-bronze);
+  }
+
+  .cc-about__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+  }
+
+  .cc-brand {
+    position: relative;
+    min-height: 360px;
+    padding: 42px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(216, 201, 174, 0.18);
+    transition:
+      transform 0.25s ease,
+      border-color 0.25s ease,
+      background 0.25s ease;
+  }
+
+  .cc-brand::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 42px;
+    width: 55px;
+    height: 3px;
+    background: var(--brand-color, var(--cc-bronze));
+  }
+
+  .cc-brand:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.055);
+    border-color: rgba(216, 201, 174, 0.38);
+  }
+
+  .cc-brand--clf {
+    --brand-color: #b38a58;
+  }
+
+  .cc-brand--mlts {
+    --brand-color: #8e778b;
+  }
+
+  .cc-brand__number {
+    margin-bottom: 45px;
+    color: var(--brand-color);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.85rem;
+    font-style: italic;
+  }
+
+  .cc-brand h3 {
+    margin: 0 0 13px;
+    color: var(--cc-white);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.55rem, 3vw, 2.15rem);
+    font-weight: 400;
+    line-height: 1.15;
+  }
+
+  .cc-brand__label {
+    display: block;
+    margin-bottom: 20px;
+    color: var(--brand-color);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .cc-brand p {
+    margin: 0;
+    color: #c7c3ba;
+    font-size: 0.98rem;
+    line-height: 1.75;
+  }
+
+  .cc-about__close {
+    max-width: 880px;
+    margin: 65px auto 0;
+    padding-top: 45px;
+    text-align: center;
+    border-top: 1px solid rgba(216, 201, 174, 0.2);
+  }
+
+  .cc-about__close p {
+    margin: 0;
+    color: var(--cc-cream);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.35rem, 3vw, 2rem);
+    line-height: 1.55;
+  }
+
+  .cc-about__close strong {
+    color: var(--cc-bronze);
+    font-weight: 400;
+  }
+
+  @media (max-width: 760px) {
+    .cc-about {
+      padding: 70px 18px;
+    }
+
+    .cc-about__intro {
+      margin-bottom: 45px;
+    }
+
+    .cc-about__statement {
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .cc-about__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cc-brand {
+      min-height: auto;
+      padding: 32px 28px;
+    }
+
+    .cc-brand::before {
+      left: 28px;
+    }
+
+    .cc-brand__number {
+      margin-bottom: 32px;
+    }
+
+    .cc-about__close {
+      margin-top: 50px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cc-brand {
+      transition: none;
+    }
+
+    .cc-brand:hover {
+      transform: none;
+    }
+  }
+</style>
+
+<section class="cc-about" aria-labelledby="cc-about-title">
+  <div class="cc-about__inner">
+
+    <header class="cc-about__intro">
+      <span class="cc-about__eyebrow">About Cornwell Creative</span>
+
+      <h2 id="cc-about-title">
+        Preserving voices.<br>
+        Sharing stories.<br>
+        Creating legacy.
+      </h2>
+
+      <p class="cc-about__lead">
+        Cornwell Creative is dedicated to preserving the stories that define
+        who we are. Through cinematic films and personal storytelling
+        experiences, our work captures the memories, voices, and moments that
+        deserve to be remembered for generations.
+      </p>
+
+      <div class="cc-about__statement">
+        Preserving voices <span>•</span>
+        Sharing memories <span>•</span>
+        Honoring stories
+      </div>
+    </header>
+
+    <div class="cc-about__grid">
+
+      <article class="cc-brand cc-brand--clf">
+
+        <div class="cc-brand__number">01</div>
+
+        <h3>Cornwell Legacy Films</h3>
+
+        <span class="cc-brand__label">
+          Heritage &amp; Storytelling
+        </span>
+
+        <p>
+          Cinematic legacy films created to preserve the stories of families,
+          individuals, historic homes, and meaningful places. More than a
+          collection of dates and photographs, each film captures the voices,
+          memories, and personal details that bring history to life.
+        </p>
+
+      </article>
+
+
+      <article class="cc-brand cc-brand--mlts">
+
+        <div class="cc-brand__number">02</div>
+
+        <h3>My Life to Share</h3>
+
+        <span class="cc-brand__label">
+          Personal Stories &amp; Life Experiences
+        </span>
+
+        <p>
+          A personal storytelling experience built around the moments,
+          reflections, and lessons that shape a life. My Life to Share gives
+          individuals the opportunity to preserve their memories in their own
+          words, creating a meaningful connection between generations.
+        </p>
+
+      </article>
+
+    </div>
+
+    <footer class="cc-about__close">
+      <p>
+        Every story matters. Every voice deserves to be heard.
+        <strong>
+          The memories we preserve today become the legacy we leave tomorrow.
+        </strong>
+      </p>
+    </footer>
+
+  </div>
+</section>
