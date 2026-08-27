@@ -1,0 +1,518 @@
+<style>
+  /*
+  CORNWELL LEGACY FILMS CONTACT PAGE
+  Keep the native Squarespace form.
+  Remove the separate image and old text blocks.
+  */
+
+  [data-section-id="6a679bdd0b57575a37dec64b"] {
+    --clf-black: #0c0b09;
+    --clf-deep: #15120e;
+    --clf-cream: #f4eee3;
+    --clf-muted: #cbc2b4;
+    --clf-gold: #b58a4d;
+    --clf-gold-light: #d4b77f;
+    --clf-line: rgba(212, 183, 127, 0.27);
+    --clf-white: #ffffff;
+  }
+
+  .clf-contact-panel,
+  .clf-contact-panel *,
+  .clf-contact-panel *::before,
+  .clf-contact-panel *::after {
+    box-sizing: border-box;
+  }
+
+  /* IMAGE STORY PANEL */
+
+  .clf-contact-panel {
+    position: relative;
+    min-height: 760px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    isolation: isolate;
+    padding: clamp(35px, 5vw, 60px);
+    background: var(--clf-black);
+    border: 1px solid var(--clf-line);
+    color: var(--clf-cream);
+  }
+
+  .clf-contact-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -3;
+    background-image:
+      url("https://images.squarespace-cdn.com/content/6a679986064bf41c2fb56985/e5f90296-ff02-46b1-b361-34e688cc8a93/place.png?content-type=image%2Fpng");
+    background-position: center;
+    background-size: cover;
+    transform: scale(1.01);
+  }
+
+  .clf-contact-panel::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background:
+      linear-gradient(
+        0deg,
+        rgba(8, 7, 5, 0.98) 0%,
+        rgba(8, 7, 5, 0.9) 38%,
+        rgba(8, 7, 5, 0.28) 72%,
+        rgba(8, 7, 5, 0.08) 100%
+      ),
+      linear-gradient(
+        90deg,
+        rgba(8, 7, 5, 0.45),
+        rgba(8, 7, 5, 0.08)
+      );
+  }
+
+  .clf-contact-panel__content {
+    position: relative;
+    width: 100%;
+    max-width: 620px;
+  }
+
+  .clf-contact-panel__content::before {
+    content: "";
+    display: block;
+    width: 58px;
+    height: 3px;
+    margin-bottom: 25px;
+    background: var(--clf-gold);
+  }
+
+  .clf-contact-panel__eyebrow {
+    display: block;
+    margin-bottom: 17px;
+    color: var(--clf-gold-light);
+    font-size: 0.7rem;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .clf-contact-panel h1 {
+    margin: 0 0 21px;
+    color: var(--clf-white);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.45rem, 5vw, 4.6rem);
+    font-weight: 400;
+    line-height: 1.03;
+    letter-spacing: -0.04em;
+  }
+
+  .clf-contact-panel h1 em {
+    display: block;
+    color: var(--clf-gold-light);
+    font-weight: 400;
+  }
+
+  .clf-contact-panel__lead {
+    margin: 0 0 28px;
+    color: #ded6ca;
+    font-size: clamp(1rem, 1.8vw, 1.13rem);
+    line-height: 1.75;
+  }
+
+  .clf-contact-panel__promise {
+    margin: 0;
+    padding: 20px 0;
+    color: var(--clf-muted);
+    font-size: 0.9rem;
+    line-height: 1.65;
+    border-top: 1px solid var(--clf-line);
+    border-bottom: 1px solid var(--clf-line);
+  }
+
+  .clf-contact-panel__promise strong {
+    color: var(--clf-cream);
+    font-weight: 600;
+  }
+
+  .clf-contact-panel__points {
+    display: grid;
+    gap: 10px;
+    margin-top: 25px;
+  }
+
+  .clf-contact-point {
+    display: grid;
+    grid-template-columns: 27px 1fr;
+    gap: 12px;
+    color: var(--clf-muted);
+    font-size: 0.86rem;
+    line-height: 1.5;
+  }
+
+  .clf-contact-point__number {
+    padding-top: 1px;
+    color: var(--clf-gold-light);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.74rem;
+    font-style: italic;
+  }
+
+  .clf-contact-point strong {
+    color: var(--clf-cream);
+    font-weight: 600;
+  }
+
+  .clf-contact-panel__email {
+    display: inline-block;
+    margin-top: 27px;
+    padding-bottom: 4px;
+    color: var(--clf-gold-light) !important;
+    font-size: 0.73rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-decoration: none;
+    border-bottom: 1px solid var(--clf-gold);
+  }
+
+  .clf-contact-panel__email:hover {
+    color: var(--clf-white) !important;
+  }
+
+  /* NATIVE SQUARESPACE FORM */
+
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form {
+    position: relative;
+    padding: clamp(28px, 4vw, 43px) !important;
+    background:
+      radial-gradient(
+        circle at top right,
+        rgba(181, 138, 77, 0.1),
+        transparent 42%
+      ),
+      linear-gradient(
+        145deg,
+        rgba(28, 24, 19, 0.99),
+        rgba(15, 13, 10, 0.99)
+      );
+    border: 1px solid var(--clf-line);
+  }
+
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form::before {
+    content: "TELL ME ABOUT THE STORY";
+    display: block;
+    margin-bottom: 29px;
+    padding-bottom: 17px;
+    color: var(--clf-gold-light);
+    font-size: 0.69rem;
+    font-weight: 700;
+    letter-spacing: 0.19em;
+    border-bottom: 1px solid var(--clf-line);
+  }
+
+  /* FORM LABELS */
+
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form label,
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form legend,
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form .title {
+    color: var(--clf-cream) !important;
+    font-size: 0.76rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.07em;
+  }
+
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form .required {
+    color: var(--clf-gold-light) !important;
+  }
+
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form .caption-text,
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form .description {
+    color: #948a7c !important;
+    font-size: 0.75rem !important;
+    line-height: 1.5;
+  }
+
+  /* FORM FIELDS */
+
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form input[type="text"],
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form input[type="email"],
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form input[type="tel"],
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form input[type="url"],
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form input[type="number"],
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form select,
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form textarea {
+    width: 100%;
+    color: var(--clf-cream) !important;
+    background: rgba(255, 255, 255, 0.038) !important;
+    border: 1px solid rgba(212, 183, 127, 0.27) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    font-family: inherit !important;
+    font-size: 0.95rem !important;
+    transition:
+      border-color 0.2s ease,
+      background 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form input[type="text"],
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form input[type="email"],
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form input[type="tel"],
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form input[type="url"],
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form input[type="number"],
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form select {
+    min-height: 52px !important;
+    padding: 13px 15px !important;
+  }
+
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form textarea {
+    min-height: 155px !important;
+    padding: 15px !important;
+    resize: vertical;
+  }
+
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form input::placeholder,
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form textarea::placeholder {
+    color: #81786d !important;
+    opacity: 1;
+  }
+
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form input:focus,
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form select:focus,
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form textarea:focus {
+    outline: none !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+    border-color: var(--clf-gold) !important;
+    box-shadow: 0 0 0 2px rgba(181, 138, 77, 0.13) !important;
+  }
+
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form input[type="checkbox"],
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form input[type="radio"] {
+    accent-color: var(--clf-gold);
+  }
+
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form .option {
+    color: var(--clf-muted) !important;
+  }
+
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form .field-list .field {
+    margin-bottom: 23px !important;
+  }
+
+  /* SUBMIT BUTTON */
+
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form input[type="submit"],
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form button[type="submit"] {
+    min-height: 55px !important;
+    padding: 15px 28px !important;
+    color: var(--clf-black) !important;
+    background: var(--clf-gold) !important;
+    border: 1px solid var(--clf-gold) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    font-family: inherit !important;
+    font-size: 0.73rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.14em !important;
+    text-transform: uppercase !important;
+    transition:
+      transform 0.2s ease,
+      background 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form input[type="submit"]:hover,
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form button[type="submit"]:hover {
+    transform: translateY(-2px);
+    background: var(--clf-gold-light) !important;
+    border-color: var(--clf-gold-light) !important;
+  }
+
+  /* SUCCESS AND ERROR STATES */
+
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form .form-submission-text {
+    padding: 25px !important;
+    color: var(--clf-cream) !important;
+    background: rgba(181, 138, 77, 0.1) !important;
+    border: 1px solid var(--clf-gold) !important;
+  }
+
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form .field-error,
+  [data-section-id="6a679bdd0b57575a37dec64b"]
+  .sqs-block-form .form-error {
+    color: #efaaa0 !important;
+  }
+
+  /* MOBILE */
+
+  @media (max-width: 767px) {
+    .clf-contact-panel {
+      min-height: 680px;
+      padding: 34px 27px;
+    }
+
+    .clf-contact-panel::before {
+      background-position: 56% center;
+    }
+
+    .clf-contact-panel h1 {
+      font-size: clamp(2.65rem, 12vw, 3.8rem);
+    }
+
+    [data-section-id="6a679bdd0b57575a37dec64b"]
+    .sqs-block-form {
+      padding: 29px 23px !important;
+    }
+
+    [data-section-id="6a679bdd0b57575a37dec64b"]
+    .sqs-block-form input[type="submit"],
+    [data-section-id="6a679bdd0b57575a37dec64b"]
+    .sqs-block-form button[type="submit"] {
+      width: 100% !important;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .clf-contact-panel *,
+    [data-section-id="6a679bdd0b57575a37dec64b"]
+    .sqs-block-form * {
+      transition: none !important;
+    }
+  }
+</style>
+
+<section
+  class="clf-contact-panel"
+  aria-labelledby="clf-contact-title"
+>
+  <div class="clf-contact-panel__content">
+
+    <span class="clf-contact-panel__eyebrow">
+      Begin the Conversation
+    </span>
+
+    <h1 id="clf-contact-title">
+      Every meaningful film begins
+      <em>with a conversation.</em>
+    </h1>
+
+    <p class="clf-contact-panel__lead">
+      Tell me about the person, property, or story you hope to preserve.
+      You do not need to have the entire project figured out. Share what
+      matters, and we can begin there.
+    </p>
+
+    <p class="clf-contact-panel__promise">
+      <strong>This is not a commitment or formal booking.</strong>
+      It is simply the first step toward understanding your story and
+      determining whether Cornwell Legacy Films is the right fit.
+    </p>
+
+    <div class="clf-contact-panel__points">
+
+      <div class="clf-contact-point">
+        <span class="clf-contact-point__number">01</span>
+
+        <span>
+          <strong>Tell me what matters.</strong>
+          Share the person, home, history, or personal story you are
+          considering preserving.
+        </span>
+      </div>
+
+      <div class="clf-contact-point">
+        <span class="clf-contact-point__number">02</span>
+
+        <span>
+          <strong>I’ll respond personally.</strong>
+          Your message comes directly to Gerald Cornwell.
+        </span>
+      </div>
+
+      <div class="clf-contact-point">
+        <span class="clf-contact-point__number">03</span>
+
+        <span>
+          <strong>We’ll find the right beginning.</strong>
+          If the project feels like a good fit, we can arrange a relaxed
+          discovery conversation.
+        </span>
+      </div>
+
+    </div>
+
+    <a
+      class="clf-contact-panel__email"
+      href="mailto:gerald@cornwelllegacyfilms.com"
+    >
+      gerald@cornwelllegacyfilms.com
+    </a>
+
+  </div>
+</section>
+<style>
+  /* FORCE BOTH CONTACT BLOCKS TO IDENTICAL HEIGHT */
+
+  @media (min-width: 768px) {
+    [data-section-id="6a679bdd0b57575a37dec64b"]
+    .fe-block:has(.clf-contact-panel),
+
+    [data-section-id="6a679bdd0b57575a37dec64b"]
+    .fe-block:has(.sqs-block-form) {
+      grid-row: 2 / 18 !important;
+      height: 100% !important;
+    }
+
+    [data-section-id="6a679bdd0b57575a37dec64b"]
+    .clf-contact-panel {
+      width: 100% !important;
+      height: 100% !important;
+      min-height: 0 !important;
+      padding: 42px !important;
+    }
+
+    [data-section-id="6a679bdd0b57575a37dec64b"]
+    .sqs-block-form {
+      width: 100% !important;
+      height: 100% !important;
+      min-height: 0 !important;
+      box-sizing: border-box !important;
+    }
+  }
+</style>
