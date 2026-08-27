@@ -65,7 +65,7 @@ export async function onRequestPost(context) {
       body: JSON.stringify({
         from: { address: from, name: "Cornwell Legacy Films Website" },
         to: [{ address: to }],
-        reply_to: { address: email, name },
+        replyTo: { address: email, name },
         subject: `New Legacy Film Inquiry — ${name}`,
         text,
       }),
